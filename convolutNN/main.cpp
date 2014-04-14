@@ -36,7 +36,7 @@ void flush(float I[n*n], const char *fn) {
 int main() {
 	DataSet ds("C:\\Users\\Lenovo\\Documents\\Visual Studio 2010\\Projects\\convolutNN\\Working");
 
-/*	Layer *l1;
+	Layer *l1;
 	l1 = new ConvLayer<5, 29, 13>(1, 5);
 	Layer *l2;
 	l2 = new ConvLayer<5, 13, 5>(5, 10);
@@ -49,22 +49,16 @@ int main() {
 	l2->randomizeWeights();
 	l3->randomizeWeights();
 	l4->randomizeWeights();
-	*/
 
-	Layer *l3;
-	l3 = new FullLayer(29*29, 20);
-	Layer *l4;
-	l4 = new FullLayer(l3->numOutputs(), 10);
-
-//	l1->randomizeWeights();
-//	l2->randomizeWeights();
+	l1->randomizeWeights();
+	l2->randomizeWeights();
 	l3->randomizeWeights();
 	l4->randomizeWeights();
 
 	NeuralNet net;
 
-//	net.appendLayer(l1);
-//	net.appendLayer(l2);
+	net.appendLayer(l1);
+	net.appendLayer(l2);
 	net.appendLayer(l3);
 	net.appendLayer(l4);
 	net.finalize();
